@@ -35,6 +35,7 @@ function createForm() {
     const bookTitle = document.createElement("p");
     bookTitle.textContent = "title";
     const bookTitleInput = document.createElement("input");
+    bookTitleInput.minLength = "1"
 
     const bookAuthor = document.createElement("p");
     bookAuthor.textContent = "Author";
@@ -50,6 +51,7 @@ function createForm() {
     hasReadInput.type = "checkbox";
 
     const addBook = document.createElement("button");
+    addBook.type = "submit";
     addBook.textContent = "Add Book"
     addBook.addEventListener("click", (e) => {
         e.preventDefault();
@@ -65,6 +67,11 @@ function createForm() {
     dialog.append(form);
 
     function addBookToLibrary() {
+        if (bookAuthorInput.value === "") {
+            bookAuthorInput.value = "Unknown";
+        }
+
+
         const book = new Book(
             bookTitleInput.value, 
             bookAuthorInput.value,

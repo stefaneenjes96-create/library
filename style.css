@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -11,17 +16,32 @@
     gap: 2rem;
     background-color: aliceblue;
     padding: 2rem;
+    z-index: 1;
 
     box-shadow: 0 2px 1px rgb(177, 177, 177);
 }
 
 .header button {
     cursor: pointer;
+    padding: 0.5rem 1.5rem;
+
+    border-radius: 0.5rem;
+    background-color: rgb(116, 149, 231);
+    box-shadow: 2px 2px 2px rgb(50, 70, 119);
+}
+
+.header button:hover {
+    background-color: rgb(97, 132, 221);
+}
+
+.header button:active {
+    box-shadow: inset 1px 1px rgb(50, 70, 119)
 }
 
 .main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    background-color: beige;
 }
 
 .bookshelf {
@@ -31,17 +51,20 @@
     padding: 20px 80px 40px 90px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 8rem));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 8rem));
     gap: 15px;
 }
 
 .book {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
+
+    box-shadow: 3px 3px 3px #4f4f4f;
 }
 
 .book p:last-child {
