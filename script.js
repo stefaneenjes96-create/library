@@ -35,7 +35,7 @@ function createForm() {
     const bookTitle = document.createElement("p");
     bookTitle.textContent = "title";
     const bookTitleInput = document.createElement("input");
-    bookTitleInput.minLength = "1"
+    bookTitleInput.required = "true"
 
     const bookAuthor = document.createElement("p");
     bookAuthor.textContent = "Author";
