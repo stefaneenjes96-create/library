@@ -35,6 +35,7 @@ function createForm() {
     const bookTitle = document.createElement("p");
     bookTitle.textContent = "title";
     const bookTitleInput = document.createElement("input");
+    bookTitleInput.type = "text"
     bookTitleInput.required = "true"
 
     const bookAuthor = document.createElement("p");
@@ -55,9 +56,16 @@ function createForm() {
     addBook.textContent = "Add Book"
     addBook.addEventListener("click", (e) => {
         e.preventDefault();
-        addBookToLibrary();
-        dialog.close();
-        dialog.style.display = "none";
+
+        if (form.checkValidity()) {
+            addBookToLibrary();
+            console.log("test")
+            dialog.close();
+            dialog.style.display = "none";
+        } else if (!bookTitleInput.checkValidity()) {
+            bookTitleInput.style.borderColor = "red"; 
+        }
+
     })
     
     form.append(bookTitle, bookTitleInput, bookAuthor, bookAuthorInput, 
