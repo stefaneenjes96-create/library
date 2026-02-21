@@ -86,3 +86,7 @@ dialog button {
     align-self: center;
 }
 
+.invalid {
+    border-color: red;
+}
+

@@ -63,7 +63,8 @@ function createForm() {
             dialog.close();
             dialog.style.display = "none";
         } else if (!bookTitleInput.checkValidity()) {
-            bookTitleInput.style.borderColor = "red"; 
+            bookTitleInput.classList.add("invalid") 
+            bookTitleInput.placeholder = "Please Enter a title"
         }
 
     })
